@@ -9,3 +9,33 @@ Rails.application.config.assets.version = '1.0'
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
+
+# setup bower components folder for lookup
+Rails.application.config.assets.paths << Rails.root.join('vendor', 'assets', 'bower_components')
+# fonts
+Rails.application.config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
+# images
+Rails.application.config.assets.precompile << /\.(?:png|jpg)$/
+# precompile vendor assets
+Rails.application.config.assets.precompile += %w( base.js )
+Rails.application.config.assets.precompile += %w( base.css )
+# precompile themes
+Rails.application.config.assets.precompile += ['angle/themes/theme-a.css',
+                             'angle/themes/theme-b.css',
+                             'angle/themes/theme-c.css',
+                             'angle/themes/theme-d.css',
+                             'angle/themes/theme-e.css',
+                             'angle/themes/theme-f.css',
+                             'angle/themes/theme-g.css',
+                             'angle/themes/theme-h.css'
+                            ]
+# Controller assets
+Rails.application.config.assets.precompile += [
+                             # Scripts
+                             'singleview.js',
+                             'home.js',
+                             # Stylesheets
+                             'singleview.css',
+                             'home.css'
+                            ]
+
