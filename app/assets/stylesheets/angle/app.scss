@@ -1,12 +1,12 @@
 /*!
- * 
+ *
  * Angle - Bootstrap Admin App + Ruby on Rails
- * 
+ *
  * Version: 3.4
  * Author: @themicon_co
  * Website: http://themicon.co
  * License: https://wrapbootstrap.com/help/licenses
- * 
+ *
  */
 
 // Override bootstrap variables
@@ -17,7 +17,7 @@
 
 // Global definition of media queries
 @import "app/media-queries";
-// Utilities 
+// Utilities
 @import "app/utils-definitions";
 
 // Bootstrap reset
@@ -37,8 +37,10 @@
 // Components
 @import "app/breadcrumbs";
 @import "app/animate";
+@import "app/panels";
+@import "app/button-extra";
 
-// Utilities 
+// Utilities
 @import "app/utils";
 
 // Print CSS
