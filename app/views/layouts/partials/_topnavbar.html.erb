@@ -34,7 +34,7 @@
             <!-- Sign-out button-->
             <li>
                <%= link_to destroy_user_session_path, method: :delete do %>
-                  <%= content_tag :span, "Sair" %>
+                  <%= content_tag :span, t('sign_out') %>
                   <em class="fa fa-sign-out"></em>
                <% end %>
             </li>
@@ -42,7 +42,7 @@
             <!-- Sign-in button-->
             <li>
                <%= link_to new_user_session_path do %>
-                  <%= content_tag :span, "Entrar" %>
+                  <%= content_tag :span, t('sign_in')%>
                   <em class="fa fa-sign-in"></em>
                <% end %>
             </li>

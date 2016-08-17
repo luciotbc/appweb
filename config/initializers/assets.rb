@@ -16,9 +16,11 @@ Rails.application.config.assets.paths << Rails.root.join('vendor', 'assets', 'bo
 Rails.application.config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
 # images
 Rails.application.config.assets.precompile << /\.(?:png|jpg)$/
+
 # precompile vendor assets
-Rails.application.config.assets.precompile += %w( base.js )
-Rails.application.config.assets.precompile += %w( base.css )
+# Rails.application.config.assets.precompile += %w( base.js )
+# Rails.application.config.assets.precompile += %w( base.css )
+
 # precompile themes
 Rails.application.config.assets.precompile += ['angle/themes/theme-a.css',
                              'angle/themes/theme-b.css',
@@ -32,10 +34,14 @@ Rails.application.config.assets.precompile += ['angle/themes/theme-a.css',
 # Controller assets
 Rails.application.config.assets.precompile += [
                              # Scripts
+                             'base.js',
                              'singleview.js',
+                             'pages.js',
                              'home.js',
                              # Stylesheets
+                             'base.css',
                              'singleview.css',
+                             'pages.css',
                              'home.css'
                             ]
 

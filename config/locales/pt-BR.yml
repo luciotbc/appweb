@@ -1,0 +1,57 @@
+# encoding: UTF-8
+# pt-BR translations for Devise
+
+pt-BR:
+
+  hello: "Olá"
+  app_name: "Portal do Sindicalizado"
+  app_description: "APP Sindicato dos Trabalhadores em Educação Pública do Paraná"
+
+  #Actions
+  edit: "Editar"
+  update: "Atualizar"
+  back: "Voltar"
+  email: "Email"
+  password: "Senha"
+  remember_me: "Lembrar"
+
+  user: "Usuário"
+
+  #Login/Devise Views
+  sign_in: "Entrar"
+  sign_out: "Sair"
+  sign_up: "Cadastrar"
+  sign_up_home: "Inscreva-se com email"
+  sign_in_with: "Entrar com"
+  forgot_your_password: "Esqueci minha senha"
+  didnt_receive_confirmation_instructions: "Não recebi o email de confirmação"
+  resend_confirmation_instructions: "Reenviar email de confirmação"
+  send_me_reset_password_instructions: "Enviar instruções para redefinição de senha"
+  change_your_password: "Alterar senha"
+  currently_waiting_confirmation_for: "Aguardando confirmação para:"
+  leave_blank_if_you_dont_want_to_change_it: "Deixe em branco se você não quiser alterar"
+  characters_minimum: "caracteres no mínimo"
+  password_to_confirm_changes: "Precisamos da sua senha atual para confirmar as alterações"
+  cancel_my_account: "Cancelar minha conta"
+  are_you_sure: "Você tem certeza?"
+  resend_unlock_instructions: "Reenviar desbloquear instruções"
+
+  # Devise Views Emails
+  welcome: "Seja bem vindo"
+  comfirmation_instructions: "Você pode confirmar seu email através do link abaixo:"
+  confirm_my_account: "Confirmar minha conta"
+  notify_password_changed: "Estamos em contato com você para notificá-lo de que sua senha foi alterada."
+  notify_password_forgot: "Alguém pediu um link para alterar sua senha. Você pode fazer isso através do link abaixo."
+  password_forgot_instructions: "<p>Se você não solicitou, por favor ignore este email.</p><p>Sua senha não será alterada até que você acesse o link acima.</p>"
+  account_has_locked: "A sua conta foi bloqueada devido a um número excessivo de tentativas de login sem sucesso. Clique no link abaixo para desbloquear sua conta:"
+  unlock_my_account: "Desbloquear a minha conta"
+
+  activerecord:
+    attributes:
+      user:
+        email: "Email"
+        password: "Senha"
+        password_confirmation: "Confirmar senha"
+        current_password: "Senha atual"
+    models:
+      user: "Usuário"

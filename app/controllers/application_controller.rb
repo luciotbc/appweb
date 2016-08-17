@@ -4,4 +4,17 @@ class ApplicationController < ActionController::Base
 
   def dashboard
   end
+
+  layout :pages
+
+  protected
+
+  def pages
+    if devise_controller? && resource_name == :user && action_name == "new"
+      "pages"
+    else
+      "application"
+    end
+  end
+
 end
