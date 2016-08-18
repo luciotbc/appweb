@@ -14,27 +14,34 @@ pt-BR:
   email: "Email"
   password: "Senha"
   remember_me: "Lembrar"
+  password_confirmation: "Confirmar senha"
+  i_agree_terms: "Eu aceito os <a href=#>Termos de Uso e Política de Privacidade</a>"
 
   user: "Usuário"
 
   #Login/Devise Views
   sign_in: "Entrar"
+  sign_in_now: "Acesse o Portal do Sindicalizado"
   sign_out: "Sair"
   sign_up: "Cadastrar"
   sign_up_home: "Inscreva-se com email"
+  signup_now: "Inscreva-se para acessar o Portal do Sindicalizado"
   sign_in_with: "Entrar com"
+  sign_in_facebook: "Entrar com Facebook"
   forgot_your_password: "Esqueci minha senha"
   didnt_receive_confirmation_instructions: "Não recebi o email de confirmação"
   resend_confirmation_instructions: "Reenviar email de confirmação"
-  send_me_reset_password_instructions: "Enviar instruções para redefinição de senha"
+  send_me_reset_password_instructions: "Recuperar senha por email"
   change_your_password: "Alterar senha"
   currently_waiting_confirmation_for: "Aguardando confirmação para:"
   leave_blank_if_you_dont_want_to_change_it: "Deixe em branco se você não quiser alterar"
   characters_minimum: "caracteres no mínimo"
   password_to_confirm_changes: "Precisamos da sua senha atual para confirmar as alterações"
   cancel_my_account: "Cancelar minha conta"
+  user_already_registered: "Você já possui uma conta?"
   are_you_sure: "Você tem certeza?"
   resend_unlock_instructions: "Reenviar desbloquear instruções"
+
 
   # Devise Views Emails
   welcome: "Seja bem vindo"

@@ -1,51 +1,42 @@
-<div class="block-center mt-xl wd-xl">
-  <!-- START panel -->
-  <div class="panel panel-dark panel-flat">
-    <div class="panel-heading text-center">
-      <a href="#">
-        <img src="<%= image_path('app_logo_big.png') %>" alt="Image" class="block-center img-rounded" />
-      </a>
-    </div>
-    <div class="panel-body">
-      <p class="text-center pv"><%= t(:app_name)%></p>
-      <%= button_to omniauth_authorize_path(resource_name, :facebook), class:"btn btn-labeled btn-primary", style:"width: 100%" do %>
-        <span class="btn-label" style="float:left"><i class="fa fa-facebook"></i></span><div style="line-height:30px">Entrar com o Facebook</div>
-      <% end %>
-      <div class="form-group" style="width: 100%; height: 12px; border-bottom: 1px solid; text-align: center">
-        <span style="background-color: #FFF; padding: 0 5px;">ou com seu e-mail</span>
-      </div>
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "mb-lg", role: "form") do |f| %>
-        <div class="form-group has-feedback">
-          <%= f.email_field :email, autofocus: true, placeholder: t(:email), autocomplete:"off", required:"required", class:"form-control" %>
-          <span class="fa fa-envelope form-control-feedback text-muted"></span>
-        </div>
-        <div class="form-group has-feedback">
-          <%= f.password_field :password, autocomplete: "off", placeholder: t(:password), required:"required", class:"form-control"%>
-          <span class="fa fa-lock form-control-feedback text-muted"></span>
-        </div>
-        <div class="clearfix">
-          <%- if devise_mapping.rememberable? %>
-            <div class="checkbox c-checkbox pull-left mt0">
-              <label>
-                <%= f.check_box :remember_me %>
-                <span class="fa fa-check"></span> <%= t(:remember_me)%>
-              </label>
-            </div>
-          <% end -%>
-          <div class="pull-right">
-            <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-              <%= link_to "#{t('forgot_your_password')}", new_password_path(resource_name), class:"text-muted" %>
-            <% end -%>
-          </div>
-        </div>
-        <%= f.submit t(:sign_in) , class:"btn btn-block btn-primary mt-lg"%>
-      <% end %>
-      <p class="pt-lg text-center">
-        <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-          <%= link_to "#{t('sign_up_home')}", new_registration_path(resource_name), class:"text-center" %>
-        <% end -%>
-      </p>
-    </div>
+<div class="panel-body">
+  <p class="text-center pv"><%= t(:sign_in_now)%></p>
+  <%= button_to omniauth_authorize_path(resource_name, :facebook), class:"btn btn-labeled btn-primary", style:"width: 100%" do %>
+    <span class="btn-label" style="float:left"><i class="fa fa-facebook"></i></span>
+    <div style="line-height:30px; width:85%"><%= t('sign_in_facebook')%></div>
+  <% end %>
+  <div class="form-group" style="width: 100%; height: 12px; border-bottom: 1px solid; text-align: center">
+    <span style="background-color: #FFF; padding: 0 5px;">ou com seu e-mail</span>
   </div>
-  <!-- END panel -->
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "mb-lg", role: "form") do |f| %>
+    <%= devise_error_messages! %>
+    <div class="form-group has-feedback">
+      <%= f.email_field :email, autofocus: true, placeholder: t(:email), autocomplete:"off", required:"required", class:"form-control" %>
+      <span class="fa fa-envelope form-control-feedback text-muted"></span>
+    </div>
+    <div class="form-group has-feedback">
+      <%= f.password_field :password, autocomplete: "off", placeholder: t(:password), required:"required", class:"form-control"%>
+      <span class="fa fa-lock form-control-feedback text-muted"></span>
+    </div>
+    <div class="clearfix">
+      <%- if devise_mapping.rememberable? %>
+        <div class="checkbox c-checkbox pull-left mt0">
+          <label>
+            <%= f.check_box :remember_me %>
+            <span class="fa fa-check"></span> <%= t(:remember_me)%>
+          </label>
+        </div>
+      <% end -%>
+      <div class="pull-right">
+        <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+          <%= link_to "#{t('forgot_your_password')}", new_password_path(resource_name), class:"text-muted" %>
+        <% end -%>
+      </div>
+    </div>
+    <%= f.submit t(:sign_in) , class:"btn btn-block btn-primary mt-lg"%>
+  <% end %>
+  <p class="pt-lg text-center">
+    <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+      <%= link_to "#{t('sign_up_home')}", new_registration_path(resource_name), class:"text-center" %>
+    <% end -%>
+  </p>
 </div>
