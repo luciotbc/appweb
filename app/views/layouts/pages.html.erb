@@ -6,6 +6,8 @@
     <meta name="description" content="APP Sindicato - Portal do Sindicalizado">
     <meta name="keywords" content="app, sindicato, professores, professor, paraná, trabalhadores, escola, educação, pública">
     <title>APP Sindicato - Portal do Sindicalizado</title>
+    <%= favicon_link_tag '/images/favicon.png' %>
+
     <!-- =============== VENDOR STYLES ===============-->
     <%= stylesheet_link_tag 'base' %>
     <!-- =============== VIEW VENDOR STYLES ===============-->
@@ -30,10 +32,9 @@
       </div>
     </div>
     <div class="p-lg text-center">
-      <span>&copy;</span>
-      <span>2016</span>
-      <span>-</span>
-      <span><%= t(:app_description) %></span>
+      <footer>
+        <%= render partial: "layouts/partials/footer" %>
+      </footer>
     </div>
     <!-- =============== VENDOR SCRIPTS ===============-->
     <%= javascript_include_tag 'base' %>

@@ -18,3 +18,7 @@ cidades_list = [[1100015, 11, "Alta Floresta D'Oeste"], [1100379, 11, "Alto Aleg
 cidades_list.each do |id, uf_id, nome|
   Cidade.create( id: id, uf_id: uf_id,nome: nome )
 end
+
+# Users
+
+User.create({email: 'user@app.com.br', password: '123123', password_confirmation: '123123'})
