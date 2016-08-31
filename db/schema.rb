@@ -28,6 +28,13 @@ ActiveRecord::Schema.define(version: 20160802193953) do
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "nome_civil"
+    t.string   "nome_social"
+    t.string   "rg"
+    t.string   "cpf"
+    t.integer  "genero"
+    t.integer  "estado_civi"
+    t.integer  "role",                   default: 0,  null: false
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -50,8 +57,10 @@ ActiveRecord::Schema.define(version: 20160802193953) do
     t.string   "provider"
     t.string   "uid"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
+    t.index ["cpf"], name: "index_users_on_cpf", unique: true, using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+    t.index ["rg"], name: "index_users_on_rg", unique: true, using: :btree
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true, using: :btree
   end
 

@@ -1,1 +1,4 @@
 <h1><%= t('hello') %></h1>
+<% if user_signed_in? %>
+  <div>Signed in as... <%= current_user.nome %></div>
+<% end %>

@@ -31,9 +31,12 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 # Use Devise for login
-gem 'devise'
-gem 'omniauth'
-gem 'omniauth-facebook'
+gem 'devise', '~> 4.2'
+gem 'omniauth', '~> 1.3', '>= 1.3.1'
+gem 'omniauth-facebook', '~> 4.0'
+
+#Use br-cpf for validate cpf
+gem 'br-cpf', '~> 1.0', '>= 1.0.1'
 
 # Use bower to Angle Bootstrap
 gem 'bower-rails', '~> 0.10.0'
