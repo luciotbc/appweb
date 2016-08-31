@@ -1,13 +1,6 @@
 class DeviseCreateUsers < ActiveRecord::Migration[5.0]
   def change
     create_table :users do |t|
-      ## Users infos
-      t.string :nome_civil
-      t.string :nome_social
-      t.string :rg
-      t.string :cpf
-      t.integer :genero
-      t.integer :estado_civi
 
       ## Database authenticatable
       t.integer :role,              null: false, default: 0
@@ -45,8 +38,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
     end
 
     add_index :users, :email,                unique: true
-    add_index :users, :cpf,                  unique: true
-    add_index :users, :rg,                   unique: true
     add_index :users, :reset_password_token, unique: true
     add_index :users, :confirmation_token,   unique: true
     add_index :users, :unlock_token,         unique: true

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160802193953) do
+ActiveRecord::Schema.define(version: 20160831161344) do
 
   create_table "cidades", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "nome"
@@ -18,6 +18,20 @@ ActiveRecord::Schema.define(version: 20160802193953) do
     t.datetime "updated_at", null: false
     t.integer  "uf_id"
     t.index ["uf_id"], name: "index_cidades_on_uf_id", using: :btree
+  end
+
+  create_table "sindicalizados", primary_key: "user_id", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "nome_civil",   null: false
+    t.string   "nome_social"
+    t.string   "rg",           null: false
+    t.string   "cpf",          null: false
+    t.integer  "genero",       null: false
+    t.integer  "estado_civil", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["cpf"], name: "index_sindicalizados_on_cpf", unique: true, using: :btree
+    t.index ["rg"], name: "index_sindicalizados_on_rg", unique: true, using: :btree
+    t.index ["user_id"], name: "index_sindicalizados_on_user_id", using: :btree
   end
 
   create_table "ufs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -28,12 +42,6 @@ ActiveRecord::Schema.define(version: 20160802193953) do
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "nome_civil"
-    t.string   "nome_social"
-    t.string   "rg"
-    t.string   "cpf"
-    t.integer  "genero"
-    t.integer  "estado_civi"
     t.integer  "role",                   default: 0,  null: false
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -57,10 +65,8 @@ ActiveRecord::Schema.define(version: 20160802193953) do
     t.string   "provider"
     t.string   "uid"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
-    t.index ["cpf"], name: "index_users_on_cpf", unique: true, using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-    t.index ["rg"], name: "index_users_on_rg", unique: true, using: :btree
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true, using: :btree
   end
 
