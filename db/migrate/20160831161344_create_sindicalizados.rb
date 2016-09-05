@@ -4,6 +4,7 @@ class CreateSindicalizados < ActiveRecord::Migration[5.0]
       t.references :user,               null: false, primary_key: true
       t.string :nome_civil,             null: false
       t.string :nome_social
+      t.date   :nascimento,             null: false
       t.string :rg,                     null: false
       t.string :cpf,                    null: false
       t.integer :genero,                null: false

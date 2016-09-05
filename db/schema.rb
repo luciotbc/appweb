@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20160831161344) do
   create_table "sindicalizados", primary_key: "user_id", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "nome_civil",   null: false
     t.string   "nome_social"
+    t.date     "nascimento",   null: false
     t.string   "rg",           null: false
     t.string   "cpf",          null: false
     t.integer  "genero",       null: false

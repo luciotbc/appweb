@@ -12,15 +12,39 @@
             <h4>Cadastro
             </h4>
             <fieldset>
-               <label for="name">Primeiro nome *</label>
-               <input id="name" name="name" type="text" class="form-control required">
-               <label for="surname">Sobrenome *</label>
-               <input id="surname" name="surname" type="text" class="form-control required">
-               <label for="email">Email *</label>
-               <input id="email" name="email" type="text" class="form-control required email">
-               <label for="address">Address</label>
-               <input id="address" name="address" type="text" class="form-control">
-               <p>(*) Mandatory</p>
+               <label for="nome">Nome *</label>
+               <input id="nome" name="nome" type="text" class="form-control required">
+               <label for="date">Data nascimento *</label>
+               <div class='input-group date' id='datetimepicker'>
+                  <input type='text' class="form-control" />
+                  <span class="input-group-addon">
+                     <span class="fa fa-calendar"></span>
+                  </span>
+               </div>
+               <label for="rg">RG *</label>
+               <input id="rg" name="rg" type="text" class="form-control required">
+               <label for="cpf">CPF *</label>
+               <input id="cpf" name="cpf" type="text" class="form-control required">
+               <label for="genero">Genero *</label>
+               <select name="genero" class="form-control m-b">
+                     <option>Feminino</option>
+                     <option>Masculino</option>
+               </select>
+               <label for="estado_civil">Estado Civil *</label>
+               <select name="estado_civil" class="form-control m-b">
+                     <option>Solteiro(a)</option>
+                     <option>Casado(a)</option>
+                     <option>Divorciado(a)</option>
+                     <option>Vivuvo(a)</option>
+               </select>
+               <label for="cor_da_pele">Cor *</label>
+               <select name="cor_da_pele" class="form-control m-b">
+                     <option>Amarelo(a)</option>
+                     <option>Branco(a)</option>
+                     <option>Negro(a)</option>
+                     <option>Pardo(a)</option>
+               </select>
+               <p>(*) Obrigatório</p>
             </fieldset>
             <h4>Contato
             </h4>
