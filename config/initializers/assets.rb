@@ -33,15 +33,43 @@ Rails.application.config.assets.precompile += ['angle/themes/theme-a.css',
                             ]
 # Controller assets
 Rails.application.config.assets.precompile += [
-                             # Scripts
-                             'base.js',
-                             'singleview.js',
-                             'pages.js',
-                             'home.js',
-                             # Stylesheets
-                             'base.css',
-                             'singleview.css',
-                             'pages.css',
-                             'home.css'
-                            ]
+                     # Scripts
+                     'charts.js',
+                     'dashboard.js',
+                     'documentation.js',
+                     'elements.js',
+                     'extras.js',
+                     'forms.js',
+                     'maps.js',
+                     'multilevel.js',
+                     'pages.js',
+                     'tables.js',
+                     'widgets.js',
+                     'blog.js',
+                     'ecommerce.js',
+                     'forum.js',
+                     'base.js',
+                     'singleview.js',
+                     'home.js',
+                     'sindicalizado.js',
+                     # Stylesheets
+                     'charts.css',
+                     'dashboard.css',
+                     'documentation.css',
+                     'elements.css',
+                     'extras.css',
+                     'forms.css',
+                     'maps.css',
+                     'multilevel.css',
+                     'pages.css',
+                     'tables.css',
+                     'widgets.css',
+                     'blog.css',
+                     'ecommerce.css',
+                     'forum.css',
+                     'base.css',
+                     'singleview.css',
+                     'home.css',
+                     'sindicalizado.css'
+                    ]
 

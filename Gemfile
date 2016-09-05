@@ -35,8 +35,8 @@ gem 'devise', '~> 4.2'
 gem 'omniauth', '~> 1.3', '>= 1.3.1'
 gem 'omniauth-facebook', '~> 4.0'
 
-#Use br-cpf for validate cpf
-gem 'br-cpf', '~> 1.0', '>= 1.0.1'
+# Use validates_cpf_cnpj for validate cpf
+gem 'validates_cpf_cnpj', '~> 0.2.0'
 
 # Use bower to Angle Bootstrap
 gem 'bower-rails', '~> 0.10.0'

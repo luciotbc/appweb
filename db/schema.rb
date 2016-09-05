@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20160831161344) do
     t.string   "cpf",          null: false
     t.integer  "genero",       null: false
     t.integer  "estado_civil", null: false
+    t.integer  "cor_da_pele",  null: false
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.index ["cpf"], name: "index_sindicalizados_on_cpf", unique: true, using: :btree

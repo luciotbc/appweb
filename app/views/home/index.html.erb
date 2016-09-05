@@ -1,5 +1,43 @@
-<h1><%= t('hello') %></h1>
+<!-- <h1><%= t('hello') %></h1>
 <% if user_signed_in? %>
   <div> não é sindicalizado? <%= current_user.sindicalizado.nil? %></div>
+  <div><%= link_to 'Dados pessoais', perfil_dados_pessoais_path %></div>
   <div>Signed in as... <%= current_user.email %></div>
 <% end %>
+ -->
+<div class="panel panel-default">
+   <div class="panel-body">
+      <form id="example-form" action="#">
+         <div>
+            <h4>Cadastro
+            </h4>
+            <fieldset>
+               <label for="name">Primeiro nome *</label>
+               <input id="name" name="name" type="text" class="form-control required">
+               <label for="surname">Sobrenome *</label>
+               <input id="surname" name="surname" type="text" class="form-control required">
+               <label for="email">Email *</label>
+               <input id="email" name="email" type="text" class="form-control required email">
+               <label for="address">Address</label>
+               <input id="address" name="address" type="text" class="form-control">
+               <p>(*) Mandatory</p>
+            </fieldset>
+            <h4>Contato
+            </h4>
+            <fieldset>
+               <p class="lead text-center">Almost there!</p>
+            </fieldset>
+            <h4>Trabalho
+            </h4>
+            <fieldset>
+               <p class="lead">One last check</p>
+               <div class="checkbox c-checkbox">
+                  <label>
+                     <input type="checkbox" required="required" name="terms">
+                     <span class="fa fa-check"></span>I agree with the Terms and Conditions.</label>
+               </div>
+            </fieldset>
+         </div>
+      </form>
+   </div>
+</div>

@@ -2,16 +2,17 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user!
 
-  layout :pages
+  layout "pages"
+  # layout :pages
 
-  protected
+  # protected
 
-  def pages
-    if devise_controller? && resource_name == :user && action_name == "new"
-      "pages"
-    else
-      "application"
-    end
-  end
+  # def pages
+  #   if devise_controller? && resource_name == :user && action_name == "new"
+  #     "pages"
+  #   else
+  #     "application"
+  #   end
+  # end
 
 end

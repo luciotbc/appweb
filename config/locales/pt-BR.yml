@@ -3,6 +3,8 @@
 
 pt-BR:
 
+
+
   hello: "Olá"
   app_name: "Portal do Sindicalizado"
   app_description: "APP Sindicato dos Trabalhadores em Educação Pública do Paraná"
@@ -18,6 +20,15 @@ pt-BR:
   i_agree_terms: "Eu aceito os <a href=#>Termos de Uso e Política de Privacidade</a>"
 
   user: "Usuário"
+
+  #Sindicalizado
+  nao_informado: "Prefiro não contar"
+  masculino: "Masculino"
+  feminino: "Feminino"
+  solteiro: "Solteiro(a)"
+  casado: "Casado(a)"
+  divorciado: "Divorciado(a)"
+  viuvo: "Viuvo(a)"
 
   #Login/Devise Views
   sign_in: "Entrar"
