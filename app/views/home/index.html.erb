@@ -5,63 +5,121 @@
   <div>Signed in as... <%= current_user.email %></div>
 <% end %>
  -->
-<div class="panel panel-default">
-   <div class="panel-body">
-      <form id="example-form" action="#">
-         <div>
-            <h4>Cadastro
-            </h4>
-            <fieldset>
-               <label for="nome">Nome *</label>
-               <input id="nome" name="nome" type="text" class="form-control required">
-               <label for="date">Data nascimento *</label>
-               <div class='input-group date' id='datetimepicker'>
-                  <input type='text' class="form-control" />
-                  <span class="input-group-addon">
-                     <span class="fa fa-calendar"></span>
-                  </span>
-               </div>
-               <label for="rg">RG *</label>
-               <input id="rg" name="rg" type="text" class="form-control required">
-               <label for="cpf">CPF *</label>
-               <input id="cpf" name="cpf" type="text" class="form-control required">
-               <label for="genero">Genero *</label>
-               <select name="genero" class="form-control m-b">
-                     <option>Feminino</option>
-                     <option>Masculino</option>
-               </select>
-               <label for="estado_civil">Estado Civil *</label>
-               <select name="estado_civil" class="form-control m-b">
-                     <option>Solteiro(a)</option>
-                     <option>Casado(a)</option>
-                     <option>Divorciado(a)</option>
-                     <option>Vivuvo(a)</option>
-               </select>
-               <label for="cor_da_pele">Cor *</label>
-               <select name="cor_da_pele" class="form-control m-b">
-                     <option>Amarelo(a)</option>
-                     <option>Branco(a)</option>
-                     <option>Negro(a)</option>
-                     <option>Pardo(a)</option>
-               </select>
-               <p>(*) Obrigatório</p>
-            </fieldset>
-            <h4>Contato
-            </h4>
-            <fieldset>
-               <p class="lead text-center">Almost there!</p>
-            </fieldset>
-            <h4>Trabalho
-            </h4>
-            <fieldset>
-               <p class="lead">One last check</p>
-               <div class="checkbox c-checkbox">
-                  <label>
-                     <input type="checkbox" required="required" name="terms">
-                     <span class="fa fa-check"></span>I agree with the Terms and Conditions.</label>
-               </div>
-            </fieldset>
-         </div>
-      </form>
-   </div>
+<%= link_to destroy_user_session_path, method: :delete do %>
+   <%= content_tag :span, t('sign_out') %>
+   <em class="fa fa-sign-out"></em>
+<% end %>
+
+<div class="panel-body">
+   <form id="example-form" role="form" action="#">
+      <div>
+         <h4>Cadastro</h4>
+         <fieldset>
+            <div class="form-group has-feedback mb-lg">
+              <input id="nome" name="nome" placeholder="Nome" type="text" class="form-control required">
+              <span class="form-control-feedback text-muted"></span>
+            </div>
+            <div class="form-group has-feedback mb-lg">
+              <script type="text/javascript">
+                var elem = document.querySelector('.js-switch');
+                var init = new Switchery(elem);
+                $(".target").hide();
+                $('#possui_nome_social').on('change', function(){
+                  var checked = $(this).prop('checked');
+                    if (checked) { $(".target").show();
+                    } else {
+                      $(".target").hide();
+                    }
+                });
+              </script>
+              <label for="possui_nome_social" class="text-muted" style="float: left;margin-right:100px;">Possui nome social?</label>
+              <input id="possui_nome_social" type="checkbox" class="js-switch"/>
+            </div>
+            <div class="form-group has-feedback mb-lg target">
+              <input id="nome_social" name="nome" placeholder="Nome social" type="text" class="form-control ">
+              <span class="form-control-feedback text-muted"></span>
+            </div>
+            <div class="input-group has-feedback mb-lg" id="datetimepicker">
+               <input type="text" placeholder="Data nascimento" class="form-control required" >
+                 <span class="input-group-addon">
+                    <span class="fa fa-calendar"></span>
+                 </span>
+               </input>
+            </div>
+            <div class="form-group has-feedback mb-lg">
+              <input id="rg" name="rg" placeholder="RG" type="text" class="form-control required">
+              <span class="form-control-feedback text-muted"></span>
+            </div>
+            <div class="form-group has-feedback mb-lg">
+              <input id="cpf" name="cpf" placeholder="CPF" type="text" class="form-control required">
+              <span class="form-control-feedback text-muted "></span>
+            </div>
+            <div class="form-group has-feedback mb-lg">
+            <select name="genero" class="form-control required" style="color:#607d8b">
+                  <option>Genero</option>
+                  <option>Feminino</option>
+                  <option>Masculino</option>
+            </select>
+            </div>
+            <div class="form-group has-feedback mb-lg">
+            <select name="estado_civil" class="form-control required" style="color:#607d8b">
+                  <option>Estado Civil</option>
+                  <option>Solteiro(a)</option>
+                  <option>Casado(a)</option>
+                  <option>Divorciado(a)</option>
+                  <option>Vivuvo(a)</option>
+            </select>
+            </div>
+            <div class="form-group has-feedback mb-lg">
+            <select name="cor_etnia" class="form-control required" style="color:#607d8b">
+                  <option>Cor/Etnia</option>
+                  <option>Amarelo(a)</option>
+                  <option>Branco(a)</option>
+                  <option>Negro(a)</option>
+                  <option>Pardo(a)</option>
+            </select>
+            </div>
+         </fieldset>
+         <h4>Contato</h4>
+         <fieldset>
+            <label for="celular">Celular</label>
+            <input id="celular" name="celular" type="text" class="form-control required">
+            <label for="telefone">Telefone</label>
+            <input id="telefone" name="telefone" type="text" class="form-control">
+            <label for="cep">CEP</label>
+            <input id="cep" name="cep" type="text" class="form-control required">
+            <label for="numero">Número</label>
+            <input id="numero" name="numero" type="text" class="form-control">
+            <label for="endereco">Endereço</label>
+            <input id="endereco" name="endereco" type="text" class="form-control required">
+            <label for="complemento">Complemento</label>
+            <input id="complemento" name="complemento" type="text" class="form-control">
+            <label for="bairro">Bairro</label>
+            <input id="bairro" name="bairro" type="text" class="form-control required">
+            <label for="cidade">Cidade</label>
+            <input id="cidade" name="cidade" type="text" class="form-control required">
+         </fieldset>
+         <h4>Trabalho</h4>
+         <fieldset>
+            <label for="cidade">Sou</label>
+            <select name="cidade" class="form-control m-b">
+                  <option>Professor</option>
+                  <option>Agente I</option>
+                  <option>Agente II</option>
+            </select>
+            <label for="cidade">Regime</label>
+            <select name="cidade" class="form-control m-b">
+                  <option>Estatutário</option>
+                  <option>Municipal</option>
+            </select>
+            <label for="cidade">Escola</label>
+            <input id="cidade" name="cidade" type="text" class="form-control required">
+            <div class="checkbox c-checkbox">
+               <label>
+                  <input type="checkbox" required="required" name="terms">
+                  <span class="fa fa-check"></span>Aceito os termos e condições.</label>
+            </div>
+         </fieldset>
+      </div>
+   </form>
 </div>

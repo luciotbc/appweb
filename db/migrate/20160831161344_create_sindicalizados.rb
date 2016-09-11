@@ -9,7 +9,7 @@ class CreateSindicalizados < ActiveRecord::Migration[5.0]
       t.string :cpf,                    null: false
       t.integer :genero,                null: false
       t.integer :estado_civil,          null: false
-      t.integer :cor_da_pele,           null: false
+      t.integer :cor_etnia,             null: false
 
       t.timestamps
     end

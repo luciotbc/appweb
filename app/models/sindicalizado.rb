@@ -5,7 +5,7 @@ class Sindicalizado < ApplicationRecord
 
   enum genero: [ :masculino, :feminino ]
   enum estado_civil: [ :solteiro, :casado, :divorciado, :viuvo ]
-  enum cor_da_pele: [ :amarelo, :branco, :pardo, :negro ]
+  enum cor_etnia: [ :amarelo, :branco, :pardo, :negro, :indigena, :quilambola ]
 
   def nome
     self.nome_social? ? self.nome_social : self.nome_civil
