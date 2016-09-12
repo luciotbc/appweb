@@ -16,7 +16,7 @@
          <h4>Cadastro</h4>
          <fieldset>
             <div class="form-group has-feedback mb-lg">
-              <input id="nome" name="nome" placeholder="Nome" type="text" class="form-control required">
+              <input id="nome" name="nome" placeholder="Nome completo" type="text" class="form-control required">
               <span class="form-control-feedback text-muted"></span>
             </div>
             <div class="form-group has-feedback mb-lg">
@@ -40,18 +40,18 @@
               <span class="form-control-feedback text-muted"></span>
             </div>
             <div class="input-group has-feedback mb-lg" id="datetimepicker">
-               <input type="text" placeholder="Data nascimento" class="form-control required" >
+               <input type="text" placeholder="Data nascimento" class="form-control required" data-masked="" data-inputmask="'mask': '99/99/9999'">
                  <span class="input-group-addon">
                     <span class="fa fa-calendar"></span>
                  </span>
                </input>
             </div>
             <div class="form-group has-feedback mb-lg">
-              <input id="rg" name="rg" placeholder="RG" type="text" class="form-control required">
+              <input id="rg" name="rg" placeholder="RG" type="text" class="form-control required" data-masked="" data-inputmask="'mask': '99.999.999-9'">
               <span class="form-control-feedback text-muted"></span>
             </div>
             <div class="form-group has-feedback mb-lg">
-              <input id="cpf" name="cpf" placeholder="CPF" type="text" class="form-control required">
+              <input id="cpf" name="cpf" placeholder="CPF" type="text" class="form-control required" data-masked="" data-inputmask="'mask': '999.999.999-99'">
               <span class="form-control-feedback text-muted "></span>
             </div>
             <div class="form-group has-feedback mb-lg">
@@ -82,22 +82,38 @@
          </fieldset>
          <h4>Contato</h4>
          <fieldset>
-            <label for="celular">Celular</label>
-            <input id="celular" name="celular" type="text" class="form-control required">
-            <label for="telefone">Telefone</label>
-            <input id="telefone" name="telefone" type="text" class="form-control">
-            <label for="cep">CEP</label>
-            <input id="cep" name="cep" type="text" class="form-control required">
-            <label for="numero">Número</label>
-            <input id="numero" name="numero" type="text" class="form-control">
-            <label for="endereco">Endereço</label>
-            <input id="endereco" name="endereco" type="text" class="form-control required">
-            <label for="complemento">Complemento</label>
-            <input id="complemento" name="complemento" type="text" class="form-control">
-            <label for="bairro">Bairro</label>
-            <input id="bairro" name="bairro" type="text" class="form-control required">
-            <label for="cidade">Cidade</label>
-            <input id="cidade" name="cidade" type="text" class="form-control required">
+            <div class="form-group has-feedback mb-lg">
+              <input id="celular" name="celular" placeholder="Celular" type="text" class="form-control required" data-masked="" data-inputmask="'mask': '(99) 9999-9999'">
+              <span class="form-control-feedback text-muted "></span>
+            </div>
+            <div class="form-group has-feedback mb-lg">
+              <input id="telefone" name="telefone" placeholder="Telefone residencial" type="text" class="form-control" data-masked="" data-inputmask="'mask': '(99) 9999-9999'">
+              <span class="form-control-feedback text-muted "></span>
+            </div>
+            <div class="form-group has-feedback mb-lg">
+              <input id="cep" name="cep" placeholder="CEP" type="text" class="form-control required" data-masked="" data-inputmask="'mask': '99999-999'">
+              <span class="form-control-feedback text-muted "></span>
+            </div>
+            <div class="form-group has-feedback mb-lg">
+              <input id="numero" name="numero" placeholder="Número" type="number" class="form-control">
+              <span class="form-control-feedback text-muted "></span>
+            </div>
+            <div class="form-group has-feedback mb-lg">
+              <input id="endereco" name="endereco" placeholder="Endereço" type="text" class="form-control required">
+              <span class="form-control-feedback text-muted "></span>
+            </div>
+            <div class="form-group has-feedback mb-lg">
+              <input id="complemento" name="complemento" placeholder="Complemento" type="text" class="form-control">
+              <span class="form-control-feedback text-muted "></span>
+            </div>
+            <div class="form-group has-feedback mb-lg">
+              <input id="bairro" name="bairro" placeholder="Bairro" type="text" class="form-control required">
+              <span class="form-control-feedback text-muted "></span>
+            </div>
+            <div class="form-group has-feedback mb-lg">
+              <input id="cidade" name="cidade" placeholder="Cidade" type="text" class="form-control required">
+              <span class="form-control-feedback text-muted "></span>
+            </div>
          </fieldset>
          <h4>Trabalho</h4>
          <fieldset>
