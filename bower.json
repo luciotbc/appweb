@@ -64,7 +64,6 @@
     "jquery.steps": "1.1.0",
     "x-editable": "1.5.1",
     "eonasdan-bootstrap-datetimepicker": "4.17.37",
-    "jquery-validation": "1.14.0",
     "Chart.js": "1.0.2",
     "chartist": "0.9.5",
     "morris.js": "0.5.1",
@@ -83,7 +82,8 @@
     "sparkline": "http://omnipotent.net/jquery.sparkline/2.1.2/jquery.sparkline.js",
     "select2": "4.0.1",
     "select2-bootstrap-theme": "0.1.0-beta.4",
-    "switchery": "^0.8.1"
+    "switchery": "^0.8.1",
+    "jquery-validation": "^1.15.1"
   },
   "resolutions": {
     "jquery": ">=1.7",

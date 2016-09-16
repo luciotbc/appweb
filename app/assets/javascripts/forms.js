@@ -36,8 +36,8 @@
 //= require blueimp-file-upload/js/jquery.fileupload-ui
 //--- xEditable
 //= require x-editable/dist/bootstrap3-editable/js/bootstrap-editable.min
-//--- Validate
-//= require jquery-validation/dist/jquery.validate
+//--- Validation
+//= require jquery-validation/dist/jquery.validate.min
 //--- Steps
 //= require jquery.steps/build/jquery.steps
 // --- ColorPicker

@@ -35,11 +35,15 @@ gem 'devise', '~> 4.2'
 gem 'omniauth', '~> 1.3', '>= 1.3.1'
 gem 'omniauth-facebook', '~> 4.0'
 
-# Use validates_cpf_cnpj for validate cpf
+# Use for validate cpf
 gem 'validates_cpf_cnpj', '~> 0.2.0'
+# Use search address by cep
+# gem 'via_cep', '~> 0.2.4.1'
+gem 'via_cep', :git => 'git://github.com/luciotbc/via_cep.git'
 
 # Use bower to Angle Bootstrap
 gem 'bower-rails', '~> 0.10.0'
+gem 'simple_form', '~> 3.3', '>= 3.3.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
