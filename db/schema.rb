@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160831161344) do
+ActiveRecord::Schema.define(version: 20160916175008) do
 
   create_table "cidades", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "nome"
@@ -18,6 +18,20 @@ ActiveRecord::Schema.define(version: 20160831161344) do
     t.datetime "updated_at", null: false
     t.integer  "uf_id"
     t.index ["uf_id"], name: "index_cidades_on_uf_id", using: :btree
+  end
+
+  create_table "enderecos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id",     null: false
+    t.integer  "cidade_id",   null: false
+    t.integer  "cep",         null: false
+    t.string   "bairro",      null: false
+    t.string   "rua",         null: false
+    t.integer  "numero"
+    t.string   "complemento"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["cidade_id"], name: "index_enderecos_on_cidade_id", using: :btree
+    t.index ["user_id"], name: "index_enderecos_on_user_id", using: :btree
   end
 
   create_table "sindicalizados", primary_key: "user_id", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -34,6 +48,15 @@ ActiveRecord::Schema.define(version: 20160831161344) do
     t.index ["cpf"], name: "index_sindicalizados_on_cpf", unique: true, using: :btree
     t.index ["rg"], name: "index_sindicalizados_on_rg", unique: true, using: :btree
     t.index ["user_id"], name: "index_sindicalizados_on_user_id", using: :btree
+  end
+
+  create_table "telefones", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.string   "numero",        null: false
+    t.integer  "telefone_tipo", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["user_id"], name: "index_telefones_on_user_id", using: :btree
   end
 
   create_table "ufs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -73,4 +96,7 @@ ActiveRecord::Schema.define(version: 20160831161344) do
   end
 
   add_foreign_key "cidades", "ufs"
+  add_foreign_key "enderecos", "cidades"
+  add_foreign_key "enderecos", "users"
+  add_foreign_key "telefones", "users"
 end
