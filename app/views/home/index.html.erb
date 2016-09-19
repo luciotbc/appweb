@@ -117,19 +117,28 @@
          </fieldset>
          <h4>Trabalho</h4>
          <fieldset>
-            <label for="cidade">Sou</label>
-            <select name="cidade" class="form-control m-b">
-                  <option>Professor</option>
+         <div class="form-group has-feedback mb-lg">
+            <select name="ocupacao" class="form-control required" style="color:#607d8b">
+                  <option>Ocupacao</option>
                   <option>Agente I</option>
                   <option>Agente II</option>
+                  <option>Professor</option>
             </select>
-            <label for="cidade">Regime</label>
-            <select name="cidade" class="form-control m-b">
+            </div>
+            <div class="form-group has-feedback mb-lg">
+            <select name="cor_etnia" class="form-control required" style="color:#607d8b">
+                  <option>Regime</option>
+                  <option>CLT</option>
                   <option>Estatutário</option>
                   <option>Municipal</option>
+                  <option>PR Educação</option>
+                  <option>PSS</option>
             </select>
-            <label for="cidade">Escola</label>
-            <input id="cidade" name="cidade" type="text" class="form-control required">
+            </div>
+            <div class="form-group has-feedback mb-lg">
+              <input id="escola" name="escola" placeholder="Escola" type="text" class="form-control required">
+              <span class="form-control-feedback text-muted "></span>
+            </div>
             <div class="checkbox c-checkbox">
                <label>
                   <input type="checkbox" required="required" name="terms">

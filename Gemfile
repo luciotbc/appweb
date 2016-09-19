@@ -39,7 +39,7 @@ gem 'omniauth-facebook', '~> 4.0'
 gem 'validates_cpf_cnpj', '~> 0.2.0'
 # Use search address by cep
 # gem 'via_cep', '~> 0.2.4.1'
-gem 'via_cep', :git => 'git://github.com/luciotbc/via_cep.git'
+gem 'via_cep', :git => 'https://github.com/marcelobarreto/via_cep.git'
 
 # Use bower to Angle Bootstrap
 gem 'bower-rails', '~> 0.10.0'
