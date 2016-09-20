@@ -35,8 +35,8 @@ gem 'devise', '~> 4.2'
 gem 'omniauth', '~> 1.3', '>= 1.3.1'
 gem 'omniauth-facebook', '~> 4.0'
 
-# Use for validate cpf
-gem 'validates_cpf_cnpj', '~> 0.2.0'
+# Use for validate model
+# gem 'validators', '~> 2.5', '>= 2.5.3'
 # Use search address by cep
 # gem 'via_cep', '~> 0.2.4.1'
 gem 'via_cep', :git => 'https://github.com/marcelobarreto/via_cep.git'
@@ -57,6 +57,10 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  ## Use to create Fake values
+  gem 'faker', '~> 1.6', '>= 1.6.6'
+  gem 'cpf_faker', '~> 1.3'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

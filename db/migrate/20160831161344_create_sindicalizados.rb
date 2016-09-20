@@ -5,11 +5,11 @@ class CreateSindicalizados < ActiveRecord::Migration[5.0]
       t.string :nome_civil,             null: false
       t.string :nome_social
       t.date   :nascimento,             null: false
-      t.string :rg,                     null: false
-      t.string :cpf,                    null: false
-      t.integer :genero,                null: false
-      t.integer :estado_civil,          null: false
-      t.integer :cor_etnia,             null: false
+      t.string :rg,                     null: false, limit: 15
+      t.string :cpf,                    null: false, limit: 11
+      t.integer :genero,                null: false, default: 1
+      t.integer :estado_civil,          null: false, default: 1
+      t.integer :cor_etnia,             null: false, default: 1
 
       t.timestamps
     end

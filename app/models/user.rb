@@ -1,6 +1,9 @@
 class User < ApplicationRecord
 
   has_one :sindicalizado, :dependent => :nullify
+  has_many :enderecos
+  has_many :telefones
+
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -19,5 +22,9 @@ class User < ApplicationRecord
       user.email = auth.info.email
       user.password = Devise.friendly_token[0,20]
     end
+  end
+
+  def cadastro_completo?
+    self.sindicalizado.present? && self.enderecos.present? && self.telefones.present?
   end
 end

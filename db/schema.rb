@@ -21,30 +21,31 @@ ActiveRecord::Schema.define(version: 20160916175008) do
   end
 
   create_table "enderecos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id",     null: false
-    t.integer  "cidade_id",   null: false
-    t.integer  "cep",         null: false
-    t.string   "bairro",      null: false
-    t.string   "rua",         null: false
+    t.integer  "user_id",                               null: false
+    t.integer  "cidade_id",                             null: false
+    t.string   "cep",         limit: 8,                 null: false
+    t.string   "bairro"
+    t.string   "rua",                                   null: false
     t.integer  "numero"
     t.string   "complemento"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.boolean  "principal",             default: false, null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
     t.index ["cidade_id"], name: "index_enderecos_on_cidade_id", using: :btree
     t.index ["user_id"], name: "index_enderecos_on_user_id", using: :btree
   end
 
   create_table "sindicalizados", primary_key: "user_id", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "nome_civil",   null: false
+    t.string   "nome_civil",                          null: false
     t.string   "nome_social"
-    t.date     "nascimento",   null: false
-    t.string   "rg",           null: false
-    t.string   "cpf",          null: false
-    t.integer  "genero",       null: false
-    t.integer  "estado_civil", null: false
-    t.integer  "cor_etnia",    null: false
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.date     "nascimento",                          null: false
+    t.string   "rg",           limit: 15,             null: false
+    t.string   "cpf",          limit: 11,             null: false
+    t.integer  "genero",                  default: 1, null: false
+    t.integer  "estado_civil",            default: 1, null: false
+    t.integer  "cor_etnia",               default: 1, null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.index ["cpf"], name: "index_sindicalizados_on_cpf", unique: true, using: :btree
     t.index ["rg"], name: "index_sindicalizados_on_rg", unique: true, using: :btree
     t.index ["user_id"], name: "index_sindicalizados_on_user_id", using: :btree
@@ -52,10 +53,10 @@ ActiveRecord::Schema.define(version: 20160916175008) do
 
   create_table "telefones", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
-    t.string   "numero",        null: false
-    t.integer  "telefone_tipo", null: false
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.string   "numero",        limit: 13,             null: false
+    t.integer  "telefone_tipo",            default: 1, null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
     t.index ["user_id"], name: "index_telefones_on_user_id", using: :btree
   end
 

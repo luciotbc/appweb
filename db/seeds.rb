@@ -21,4 +21,7 @@ end
 
 # Users
 
-User.create({email: 'user@app.com.br', password: '123123', password_confirmation: '123123'})
+User.create({email: 'user@app.com.br', password: '123123', password_confirmation: '123123', confirmed_at: Date.today})
+Sindicalizado.create({user_id: 1, nome_civil: Faker::Name.name, nascimento: Faker::Date.between(80.year.ago, 21.year.ago), rg: Faker::CNPJ.numeric, cpf: Faker::CPF.numeric, genero: rand(0..1), estado_civil: rand(0..3), cor_etnia: rand(0..5)})
+Endereco.create({user_id: 1, cidade_id: 4106902, cep: Faker::Address.zip_code.gsub(/[^0-9]/i, ''), bairro: Faker::Address.street_name, rua: Faker::Address.street_name, numero: rand(0..9999), complemento: Faker::Address.secondary_address, principal: 1})
+Telefone.create({user_id: 1, numero: Faker::PhoneNumber.phone_number.gsub(/[^0-9]/i, ''), telefone_tipo: rand(0..2)})

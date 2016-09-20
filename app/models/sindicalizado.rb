@@ -1,7 +1,7 @@
 class Sindicalizado < ApplicationRecord
   belongs_to :user
 
-  validates_cpf :cpf
+  # validates_cpf :cpf
 
   enum genero: [ :masculino, :feminino ]
   enum estado_civil: [ :solteiro, :casado, :divorciado, :viuvo ]
