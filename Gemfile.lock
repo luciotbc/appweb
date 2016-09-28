@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/marcelobarreto/via_cep.git
-  revision: 9829568c2da23d6bf89799180693a5a641aabb49
+  revision: 5b203d9c34e6927c867c8f7f2305858aea98283d
   specs:
     via_cep (0.2.4.1)
       activesupport (~> 5.0)
@@ -103,7 +103,7 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
     mini_portile2 (2.1.0)
-    minitest (5.9.0)
+    minitest (5.9.1)
     multi_json (1.12.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)

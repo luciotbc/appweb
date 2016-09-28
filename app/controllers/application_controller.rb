@@ -6,12 +6,12 @@ class ApplicationController < ActionController::Base
 
   protected
   def app_layout
-    if devise_controller? && resource_name == :user && action_name == "new"
-      "pages"
-    elsif action_name == "welcome"
-      "pages"
+    if devise_controller? && resource_name == :user && action_name == 'new'
+      'pages'
+    elsif action_name == 'primeiro_cadastro'
+      'pages'
     else
-      "application"
+      'application'
     end
   end
 

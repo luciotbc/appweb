@@ -1,0 +1,44 @@
+<%= notice %>
+<%= alert %>
+<%= simple_form_for @user,
+    :url => users_cadastro_path,
+    :method => 'post' do |u| %>
+
+  <%= u.error_notification %>
+
+  <%= u.input :email, required: true %>
+
+<%= simple_form_for @sindicalizado do |s| %>
+    <%= s.error_notification %>
+
+    <%= s.input :nome_civil, label: false, placeholder: 'Nome Completo', class:'form-control required' %>
+    <%= s.input :nome_social, label: false, placeholder: 'Nome Social', class:'form-control required' %>
+    <%= s.input :nascimento, as: :date, start_year: Date.today.year - 18, end_year: Date.today.year - 80 %>
+    <%= s.input :rg, label: false, placeholder: 'RG', class:'form-control required' %>
+    <%= s.input :cpf, label: false, placeholder: 'CPF', class:'form-control required' %>
+    <%= s.input :genero %>
+    <%= s.input :estado_civil %>
+    <%= s.input :cor_etnia %>
+  <% end %>
+
+  <%= simple_form_for @endereco do |e| %>
+    <%= e.error_notification %>
+
+    <%= e.input :cep %>
+    <%= e.input :cidade_id %>
+    <%= e.input :bairro %>
+    <%= e.input :rua %>
+    <%= e.input :numero %>
+    <%= e.input :complemento %>
+  <% end %>
+
+  <%= simple_form_for @telefone do |t| %>
+    <%= t.error_notification %>
+
+    <%= t.input :numero %>
+    <%= t.input :tipo_telefone %>
+  <% end %>
+
+
+  <%= u.button :submit %>
+<% end %>

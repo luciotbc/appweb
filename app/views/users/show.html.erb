@@ -1,0 +1,6 @@
+<p id="notice"><%= notice %></p>
+
+<p><%= @user.email %> - <%= link_to 'Sindicalizado', edit_sindicalizado_path(@user.sindicalizado)%></p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

@@ -1,0 +1,18 @@
+<%= simple_form_for(@sindicalizado) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :nome_civil, label: false, placeholder: 'Nome Completo', error: 'O nome é obrigatório'%>
+    <%= f.input :nome_social, label: false, placeholder: 'Nome Social'%>
+    <%= f.input :nascimento, label: false %>
+    <%= f.input :rg, label: false %>
+    <%= f.input :cpf, label: false %>
+    <%= f.input :genero, label: false %>
+    <%= f.input :estado_civil, label: false %>
+    <%= f.input :cor_etnia, label: false %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
