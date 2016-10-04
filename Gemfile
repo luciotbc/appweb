@@ -34,16 +34,22 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise', '~> 4.2'
 gem 'omniauth', '~> 1.3', '>= 1.3.1'
 gem 'omniauth-facebook', '~> 4.0'
+# use to authorization
+gem 'pundit', '~> 1.1'
 
 # Use for validate model
-# gem 'validators', '~> 2.5', '>= 2.5.3'
+gem 'validates_cpf_cnpj', '~> 0.2.0'
+gem 'validates_timeliness', '~> 4.0', '>= 4.0.2'
+
+# Use for soft-deleted
+gem 'paranoia', '~> 2.1', '>= 2.2.pre'
+
 # Use search address by cep
 # gem 'via_cep', '~> 0.2.4.1'
 gem 'via_cep', :git => 'https://github.com/marcelobarreto/via_cep.git'
 
 # Use bower to Angle Bootstrap
 gem 'bower-rails', '~> 0.10.0'
-gem 'simple_form', '~> 3.3', '>= 3.3.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160916175008) do
+ActiveRecord::Schema.define(version: 20161004202542) do
 
   create_table "cidades", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "nome"
@@ -46,7 +46,9 @@ ActiveRecord::Schema.define(version: 20160916175008) do
     t.integer  "cor_etnia",               default: 1, null: false
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.datetime "deleted_at"
     t.index ["cpf"], name: "index_sindicalizados_on_cpf", unique: true, using: :btree
+    t.index ["deleted_at"], name: "index_sindicalizados_on_deleted_at", using: :btree
     t.index ["rg"], name: "index_sindicalizados_on_rg", unique: true, using: :btree
     t.index ["user_id"], name: "index_sindicalizados_on_user_id", using: :btree
   end
@@ -90,7 +92,9 @@ ActiveRecord::Schema.define(version: 20160916175008) do
     t.datetime "updated_at",                          null: false
     t.string   "provider"
     t.string   "uid"
+    t.datetime "deleted_at"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
+    t.index ["deleted_at"], name: "index_users_on_deleted_at", using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true, using: :btree

@@ -1,9 +1,5 @@
 class User < ApplicationRecord
-
-  has_one :sindicalizado, :dependent => :nullify
-  has_many :enderecos
-  has_many :telefones
-
+  acts_as_paranoid
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -11,11 +7,20 @@ class User < ApplicationRecord
     :recoverable, :rememberable, :trackable, :validatable,
     :confirmable, :omniauthable, :omniauth_providers => [:facebook]
 
+  #Validations
   validates_presence_of :email
   validates_confirmation_of :password
   #validates_length_of :bio, :minimum => 30, :allow_blank => false
   validates_format_of :email, :with => /\A[^@]+@([^@\.]+\.)+[^@\.]+\z/
   validates_uniqueness_of :email
+
+  #Dependency
+  has_one :sindicalizado, :dependent => :nullify
+  has_many :enderecos
+  has_many :telefones
+
+  #Enuns
+  enum role: [ :user, :admin ]
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
