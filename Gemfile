@@ -32,7 +32,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Devise for login
 gem 'devise', '~> 4.2'
-gem 'omniauth', '~> 1.3', '>= 1.3.1'
+gem 'omniauth', '~> 2.0'
 gem 'omniauth-facebook', '~> 4.0'
 # use to authorization
 gem 'pundit', '~> 1.1'
